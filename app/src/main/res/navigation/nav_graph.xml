@@ -8,21 +8,20 @@
   <fragment
       android:id="@+id/entryListFragment"
       android:name="androidsamples.java.journalapp.EntryListFragment"
-      android:label="fragment_entry_list"
+      android:label="Journal App"
       tools:layout="@layout/fragment_entry_list">
     <action
-        android:id="@+id/addEntryAction"
+        android:id="@+id/action_entryListFragment_to_entryDetailsFragment"
         app:destination="@id/entryDetailsFragment" />
   </fragment>
   <fragment
       android:id="@+id/entryDetailsFragment"
       android:name="androidsamples.java.journalapp.EntryDetailsFragment"
-      android:label="fragment_entry_details"
+      android:label="Journal App"
       tools:layout="@layout/fragment_entry_details">
     <argument
         android:name="entryId"
-        android:defaultValue='""'
-        app:argType="string" />
+        app:argType="integer" />
     <action
         android:id="@+id/datePickerAction"
         app:destination="@id/datePickerDialog" />
