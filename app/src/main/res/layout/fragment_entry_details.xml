@@ -28,7 +28,6 @@
       android:hint="@string/title_label"
       android:inputType="text"
       android:minHeight="48dp"
-      android:text="@string/title_label"
       android:textAlignment="center"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
