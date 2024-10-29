@@ -45,6 +45,17 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/edit_title" />
 
+  <TextView
+      android:id="@+id/tv_selected_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+      android:text="Selected Date"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.533"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/btn_entry_date" />
+
   <Button
       android:id="@+id/btn_start_time"
       style="?android:buttonBarButtonStyle"
@@ -66,7 +77,8 @@
       app:layout_constraintEnd_toStartOf="@+id/btn_end_time"
       app:layout_constraintHorizontal_bias="0.5"
       app:layout_constraintStart_toEndOf="@+id/btn_start_time"
-      app:layout_constraintTop_toTopOf="@+id/btn_start_time" />
+      app:layout_constraintTop_toTopOf="@+id/btn_start_time"
+      app:layout_constraintVertical_bias="0.714" />
 
   <Button
       android:id="@+id/btn_end_time"
