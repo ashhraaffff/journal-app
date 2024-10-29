@@ -165,6 +165,11 @@ public class EntryDetailsFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
   }
 
+
+  private boolean isValidTitle(String title) {
+    return title != null && !title.trim().isEmpty();
+  }
+
   private boolean isValidTimeRange(Date startTime, Date endTime) {
     return !startTime.after(endTime);
   }
@@ -221,12 +226,13 @@ public class EntryDetailsFragment extends Fragment {
     );
     timePickerDialog.show();
   }
+
   private void saveEntry() {
     String title = mTitle.getText().toString();
     Date date = mSelectedDateTime.getTime();
     Date startTime = mStartTimeCalendar.getTime();
     Date endTime = mEndTimeCalendar.getTime();
-    if (TextUtils.isEmpty(title)) {
+    if (!isValidTitle(title)) {
       Toast.makeText(requireContext(), "Title cannot be empty", Toast.LENGTH_SHORT).show();
       return;
     }
