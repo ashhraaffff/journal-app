@@ -1,4 +1,4 @@
-# A3-JournalApp
+# A4-JournalApp
 
 ## About Us
 
@@ -62,14 +62,45 @@ Once the logic for the app was built and the `EntryDetailsFragment` and `EntryLi
     - The tests focused on verifying the Journal Entries, particularly checking whether all the fields were filled and if valid titles and dates were assigned.
 
 2. **Instrumented Tests**:
+   - The instrumented tests provide in-depth testing of the app’s core functionalities, particularly the CRUD (Create, Read, Update, Delete) operations and navigational flows. The main instrumented tests include:
+     1) *RecyclerView and Entry Display*:
+        - Initial View: Confirms that the RecyclerView showing journal entries is visible on app startup.
+        - Floating Action Button Navigation: Tests that tapping the plus button navigates to the entry creation screen.
+        - Add and Display Entry: Adds a new journal entry and verifies it appears in the RecyclerView with the correct title.
+     2) *Journal Entry Details and Editing*:
+        - View Journal Entry Details: Opens a journal entry from the list and checks that the details view displays the title.
+        - Edit Journal Entry: Modifies the title of an existing entry and ensures the RecyclerView displays the updated title.
+     3) *Delete Journal Entry*:
+        - Adds an entry, deletes it from the details view with a confirmation dialog, and confirms that the entry is removed from the RecyclerView.
+     4) *Back Navigation*:
+        - Ensures that pressing the back button from the entry creation or detail view returns the user to the main RecyclerView list.
 
+3. **Espresso Tests**:
+     1) *Button Accessibility Checks*:
+        - Plus Button:  Ensures the add button is visible, clickable, and accessible with a content description.
+        - Info Button: Verifies that the info button in the menu bar is accessible and clickable.
+        - Date, Start Time, and End Time Buttons: Checks that each button in the entry details view is displayed and has content descriptions or text for accessibility.
+     2) *Navigation Tests*:
+        - Navigate to Detail Fragment: Validates that tapping the add entry button navigates correctly to the detail fragment with the save button displayed.
+     3) *Content Description Validation*:
+        - Checks that text fields like the Title edit text and Save/Delete/Share buttons are displayed and accessible.
 
-3. **Bug Fixes and Verification**:
+4. **Bug Fixes and Verification**:
    - After implementing new functionality, we rigorously tested for potential bugs, ensuring that everything from UI state persistence to UI updates worked as intended.
 
 
 ## Accessibility Enhancement  
-- **Accessibility Scanner Report:** 
+- **Accessibility Scanner Report:**
+    - We tested the app on Accessiblity Scanner to identify and address potential accessibility issues, ensuring that users with disabilities can navigate and interact with the app effectively.
+    - Upon using the Accessibility Scanner we received the following feedbacks for improvements on our UI in order to make it even more accessible to differently abled users:
+      
+      ![Screenshot 2024-10-30 122117](https://github.com/user-attachments/assets/c2ac112d-70eb-4da2-b8fb-56e3a86c39e8)
+
+      ![Screenshot 2024-10-30 122208](https://github.com/user-attachments/assets/41acf45d-486e-4e2f-9875-81dadbfd3af0)
+
+     - These are some of the images containing the analysis of the UI as done by the Accessibility Scanner. Similarly we had a total of 12 screens analysed.
+     - Accordingly, we changed the text from dip to scaled pixels (sp), changed the size of the text and adjusted the contrast ratios on our UI to suit the suggestions provided by the Accessibility Scanner.
+
 
 ## Time Taken
 
@@ -89,7 +120,7 @@ We would rate the difficulty of this assignment as **7.5** out of 10. Some of th
    Used ChatGPT for understanding how to integrate the various libraries and familiarize ourselves with their syntax.
    
 2. **Android Documentation:**  
-   Referred to [Android Documentation](https://developer.android.com/docs) for implementing SharedPreferences and Fragments.
+   Referred to [Android Documentation](https://developer.android.com/docs) for implementing MenuBar action items and Fragments.
    
 3. **Swaroop Sir's course site:**
    We referred to [Swaroop Sir's website](https://swaroopjoshi.in/courses/mobile-app-dev/09-persistent-data/) in order to understand how Room Databases and Room Libraries work.
